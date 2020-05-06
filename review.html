@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mextiles - Turn your photos into affordable,stunning wall art</title>
+
+    <link rel="stylesheet" href="style2.css">
+
+    <link rel="stylesheet" href="./icofont/icofont.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body style="background: #f7f7f7;">
+
+    <div class="container-fluid head text-center" style="background-color: white;">
+
+        <a href="index.html">
+            <img class="back" src="./assest/backButton.svg" style="float: left;">
+        </a>
+        <p class="style">Style Photos
+            <!-- <i class="icofont-align-left menu"></i> -->
+            <div class="dropdown show pull-right">
+                <img src="./assest/menuIcon.svg" id="dropdownMenuLink" data-toggle="dropdown">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+        </p>
+
+        <center>
+            <div class="main-frame">
+                <div class="frame-box">
+                    <img class="frame" id="f1" src="./assest/Frames/cleanIcon.svg">
+                    <p>Clean</p>
+                </div>
+                <div class="frame-box">
+                    <img class="frame" id="f2" src="./assest/Frames/everIcon.svg">
+                    <p>ever</p>
+                </div>
+                <div class="frame-box">
+                    <img class="frame" id="f3" src="./assest/Frames/boldIcon.svg">
+                    <p>bold</p>
+                </div>
+                <div class="frame-box">
+                    <img class="frame" id="f4" src="./assest/Frames/classicIcon.svg">
+                    <p>classic</p>
+                </div>
+            </div>
+        </center>
+    </div>
+
+    <div class="container-fluid background">
+        <center>
+            <br>
+            <p class="photos">PICK SOME PHOTOS!</p>
+            <br>
+            <!-- 
+            <div class="square-btn">
+                <div class="plus">
+                    <i class="icofont-plus 3x"></i>
+                    <center>
+                        <div class="upload">
+                            <p>Upload Photos</p>
+                        </div>
+                    </center>
+                </div>
+            </div> -->
+
+            <center>
+                <img id="outer" src="">
+                <img id="blah" src="./assest/background/noTilesImage@2x.jpg" alt="Course image"
+                    class="thumbnail square-btn">
+            </center>
+
+            <br><br>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <div class="input-group" id="removeFileOption">
+                        <div id="" class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                aria-describedby="inputGroupFileAddon01" name="image" required=""
+                                onchange="readURL(this);getImagVal();" value="{{old('image')}}">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <br>
+        </center>
+    </div>
+
+
+    <!-- image selector -->
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $('document').ready(function () {
+            $('#f1').click(function () {
+                $('img').removeClass("square-btn");
+                $('#outer').attr("src", "./assest/Frames/cleanIcon.svg");
+                $('#outer').css({ "width": "289px", "height": "288px" });
+                $('#blah').css({ "margin-left": "-249px" });
+            });
+
+            $('#f3').click(function () {
+                $('img').removeClass("square-btn");
+                $('#outer').attr("src", "./assest/Frames/boldIcon.svg");
+                $('#outer').css({ "width": "289px", "height": "288px" });
+                $('#blah').css({ "margin-left": "-249px" });
+            });
+
+            $("#inputGroupFile01").click(function () {
+                $('img').removeClass("square-btn");
+                $('#blah').css({ "width": "200px", "height": "200px" });
+            })
+        });
+    </script>
+
+</body>
+
+</html>
